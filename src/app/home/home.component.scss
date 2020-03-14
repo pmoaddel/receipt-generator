@@ -1,0 +1,17 @@
+#home {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+
+  .content {
+    flex-grow: 1
+  }
+  .sidebar {
+    float: right;
+    width: 500px;
+    background: lightblue;
+    height: 100%
+  }
+
+}

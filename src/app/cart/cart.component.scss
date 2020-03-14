@@ -1,0 +1,30 @@
+.cart {
+  color: white;
+
+  .checkout {
+    background: darkblue;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    .tile {
+      height: 75%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .checkout-buttons {
+      display: flex;
+      justify-content: center;
+      flex-direction: row;
+    }
+  }
+
+  .items-list {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+}
