@@ -1,6 +1,7 @@
-import { Store } from '@ngrx/store'
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ItemService } from '../item.service';
+
 
 import Item from '../item';
 
@@ -10,13 +11,19 @@ import Item from '../item';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
-  // items$: Observable<Item[]> = this.store.select(state => state.items);
+  loading$: Observable<boolean>;
+  items$: Observable<Item[]>;
 
-  constructor(
-    private store: Store<{ items: Item[] }>
-  ) { }
+  constructor(private itemService: ItemService) {
+    this.items$ = itemService.entities$;
+    this.loading$ = itemService.loading$;
+  }
 
-	ngOnInit() {
-		// this.store.dispatch({ type: '[Item] Load Items' });
+  ngOnInit() {
+    this.getItems();
+  }
+
+  getItems() {
+    this.itemService.findAll();
   }
 }

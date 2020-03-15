@@ -284,6 +284,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@ngrx/data@^9.0.0":
+  version "9.0.0"
+  resolved "https://purecloud.jfrog.io/purecloud/api/npm/inin-internal-npm/@ngrx/data/-/data-9.0.0.tgz#3ab66fc1f48c18a11b0877b2675ca0923ae6f213"
+  integrity sha1-OrZvwfSMGKEbCHeyZ1ygkjrm8hM=
+
 "@ngrx/effects@^9.0.0":
   version "9.0.0"
   resolved "https://purecloud.jfrog.io/purecloud/api/npm/inin-internal-npm/@ngrx/effects/-/effects-9.0.0.tgz#fe9956911621183f7d1d75c606578cfa25750b73"

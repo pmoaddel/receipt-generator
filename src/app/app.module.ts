@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { DefaultDataServiceConfig, EntityDataModule } from '@ngrx/data';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +13,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ItemTileComponent } from './item-tile/item-tile.component';
 
-import { ItemEffects } from './item.effect';
-import { itemReducer } from './item.reducer';
+import { entityConfig } from './entity-metadata';
 
 
 
@@ -30,8 +30,9 @@ import { itemReducer } from './item.reducer';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot([itemReducer]),
-    EffectsModule.forRoot([ItemEffects])
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    EntityDataModule.forRoot(entityConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
