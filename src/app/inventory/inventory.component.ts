@@ -1,4 +1,8 @@
+import { Store } from '@ngrx/store'
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import Item from '../item';
 
 @Component({
   selector: 'app-inventory',
@@ -6,10 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
+  // items$: Observable<Item[]> = this.store.select(state => state.items);
 
-  constructor() { }
+  constructor(
+    private store: Store<{ items: Item[] }>
+  ) { }
 
-  ngOnInit() {
+	ngOnInit() {
+		// this.store.dispatch({ type: '[Item] Load Items' });
   }
-
 }

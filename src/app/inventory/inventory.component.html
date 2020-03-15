@@ -1,3 +1,7 @@
 <div class="inventory">
-  <button type="button" class="btn btn-primary"> Add Item </button>
+  <div class="row">
+    <div *ngFor="let item of items" class="col-sm-3" >
+      <app-item-tile [item]="item"> </app-item-tile>
+    </div>
+  </div>
 </div>

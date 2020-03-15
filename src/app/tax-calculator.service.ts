@@ -32,4 +32,5 @@ export class TaxCalculatorService {
     }
     return price.times(rate).toNearest(rounding, Decimal.ROUND_UP);
   }
+
 }

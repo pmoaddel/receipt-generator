@@ -1,0 +1,29 @@
+{
+  "entities": [
+    {
+      "id": "001",
+      "name": "16lb bag of Skittles",
+      "price": 16.00,
+      "isImported": false,
+      "types": [ "candy" ]
+    },
+    {
+      "id": "002",
+      "name": "Walkman",
+      "price": 99.99,
+      "isImported": false,
+      "types": []
+    },
+    {
+      "id": "003",
+      "name": "bag of microwave Popcorn",
+      "price": 0.99,
+      "isImported": false,
+      "types": [ "popcorn" ]
+    }
+  ],
+  "pageSize": 25,
+  "pageNumber": 1,
+  "total": 0,
+  "pageCount": 1
+}
