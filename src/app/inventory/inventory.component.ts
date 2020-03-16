@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ItemService } from '../item.service';
 
-
 import Item from '../item';
 
 @Component({
@@ -11,19 +10,15 @@ import Item from '../item';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
-  loading$: Observable<boolean>;
-  items$: Observable<Item[]>;
+  items: Item[] = [];
 
   constructor(private itemService: ItemService) {
-    this.items$ = itemService.entities$;
-    this.loading$ = itemService.loading$;
   }
 
   ngOnInit() {
-    this.getItems();
+    this.itemService.findAll().subscribe((items: Item[]) => {
+      this.items = items;
+    });
   }
 
-  getItems() {
-    this.itemService.findAll();
-  }
 }

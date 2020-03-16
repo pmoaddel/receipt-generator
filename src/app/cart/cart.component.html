@@ -13,6 +13,11 @@
 
   <!-- Items List  -->
   <div class="items-list">
-    Items:
+    <div class="row">
+      <div *ngFor="let item of cartService.items" class="col-sm-3" >
+        <span> {{item.name}} </span>
+        <span> {{item.price}} </span>
+      </div>
+    </div>
   </div>
 </div>

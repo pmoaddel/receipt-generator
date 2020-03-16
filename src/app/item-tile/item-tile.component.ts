@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { CartService } from '../cart.service';
+
 import Item from '../item';
 
 @Component({
@@ -9,9 +11,13 @@ import Item from '../item';
 export class ItemTileComponent implements OnInit {
   @Input() item: Item;
 
-  constructor() { }
+  constructor(private cartService: CartService) { }
 
   ngOnInit() {
+  }
+
+  addToCart() {
+    this.cartService.addItem(this.item);
   }
 
 }

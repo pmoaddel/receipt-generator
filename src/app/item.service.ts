@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {
-  EntityCollectionServiceBase,
-  EntityCollectionServiceElementsFactory
-} from '@ngrx/data';
 import { Observable, of } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 import Item from './item'
@@ -12,12 +8,11 @@ import Item from './item'
 @Injectable({
   providedIn: 'root'
 })
-export class ItemService extends EntityCollectionServiceBase<Item> {
+export class ItemService {
   itemUrl: string = 'http://localhost:4200/assets/items.json';
   private _items: Item[] = [];
 
-  constructor(private http: HttpClient, serviceElementsFactory: EntityCollectionServiceElementsFactory) {
-    super('Item', serviceElementsFactory);
+  constructor(private http: HttpClient) {
   }
 
 
