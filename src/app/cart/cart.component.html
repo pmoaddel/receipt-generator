@@ -4,10 +4,10 @@
   <div class="checkout">
     <div class="tile">
 
-      <span> Subtotal: </span>
+      <span> Subtotal: {{cartService.subtotal()}}</span>
     </div>
     <div class="checkout-buttons">
-      <button type="button" class="btn btn-primary"> Checkout </button>
+      <button type="button" class="btn btn-primary" routerLink="/receipt"> Checkout </button>
     </div>
   </div>
 

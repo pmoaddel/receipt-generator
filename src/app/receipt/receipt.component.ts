@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { CartService } from '../cart.service';
 
+
 @Component({
-  selector: 'app-cart',
-  templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  selector: 'app-receipt',
+  templateUrl: './receipt.component.html',
+  styleUrls: ['./receipt.component.scss']
 })
-export class CartComponent {
+export class ReceiptComponent {
 
   constructor(private cartService: CartService) { }
-
 }

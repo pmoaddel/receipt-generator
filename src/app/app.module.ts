@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ItemTileComponent } from './item-tile/item-tile.component';
+import { ReceiptComponent } from './receipt/receipt.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ItemTileComponent } from './item-tile/item-tile.component';
     HomeComponent,
     InventoryComponent,
     NavBarComponent,
-    ItemTileComponent
+    ItemTileComponent,
+    ReceiptComponent
   ],
   imports: [
     BrowserModule,

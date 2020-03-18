@@ -1,0 +1,33 @@
+<div class="container receipt-background">
+  <div class="row">
+      <div class="col-6">
+        <app-inventory> </app-inventory>
+      </div>
+      <div class="col-6">
+        Your Order Summary
+        <div class="row">
+          <div class="col-3">
+            Name
+          </div>
+          <div class="col-3">
+            Price
+          </div>
+          <div class="col-3">
+            Tax
+          </div>
+        </div>
+        <div class="row" *ngFor="let item of cartService.items">
+          <div class="col-4">
+            {{item.name}}
+          </div>
+          <div class="col-4">
+            {{item.price}}
+          </div>
+          <div class="col-4">
+            {{cartService.getTax(item)}}
+          </div>
+        </div>
+        Tax: {{cartService.totalTax()}}
+        Total: {{cartService.total()}}
+      </div>
+</div>

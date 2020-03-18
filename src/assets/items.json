@@ -12,7 +12,7 @@
       "name": "Walkman",
       "price": 99.99,
       "isImported": false,
-      "types": []
+      "types": [ "electronics" ]
     },
     {
       "id": "003",
@@ -20,10 +20,52 @@
       "price": 0.99,
       "isImported": false,
       "types": [ "popcorn" ]
+    },
+    {
+      "id": "004",
+      "name": "Imported bag of Vanilla-Hazelnut Coffee",
+      "price": 11.00,
+      "isImported": true,
+      "types": [ "coffee" ]
+    },
+    {
+      "id": "005",
+      "name": "Imported Vespa",
+      "price": 15001.25,
+      "isImported": true,
+      "types": [ "car" ]
+    },
+    {
+      "id": "006",
+      "name": "Imported crate of Almond Snicker",
+      "price": 75.99,
+      "isImported": true,
+      "types": [ "candy" ]
+    },
+    {
+      "id": "007",
+      "name": "Discman",
+      "price": 55.00,
+      "isImported": false,
+      "types": [ "electronics" ]
+    },
+    {
+      "id": "008",
+      "name": "Imported Bottle of Wine",
+      "price": 10.00,
+      "isImported": true,
+      "types": [ "alcohol"]
+    },
+    {
+      "id": "009",
+      "name": "300# bag of Fair Trade Coffee at 997.99",
+      "price": 997.99,
+      "isImported": false,
+      "types": [ "coffee" ]
     }
   ],
   "pageSize": 25,
   "pageNumber": 1,
-  "total": 0,
+  "total": 8,
   "pageCount": 1
 }
