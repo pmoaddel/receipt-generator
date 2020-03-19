@@ -14,9 +14,8 @@
   <!-- Items List  -->
   <div class="items-list">
     <div class="row">
-      <div *ngFor="let item of cartService.items" class="col-sm-3" >
-        <span> {{item.name}} </span>
-        <span> {{item.price}} </span>
+      <div *ngFor="let item of cartService.items" class="col-sm-12" >
+        <app-item-tile [item]="item"> </app-item-tile>
       </div>
     </div>
   </div>

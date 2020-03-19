@@ -8,12 +8,14 @@ export default class Item {
   price: Decimal;
   isImported: boolean;
   types: string[]; // candy, coffee, etc...
+  image: string;
 
   constructor(itemJson: any) {
     this.name = itemJson.name;
     this.price = new Decimal(itemJson.price);
     this.isImported = itemJson.isImported;
     this.types = itemJson.types;
+    this.image = itemJson.image;
 	}
 
   isSalesTaxFree(): boolean {

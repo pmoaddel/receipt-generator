@@ -1,0 +1,16 @@
+.card {
+  width: 350px;
+
+  .imgContainer {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+    .card-img-top {
+      display: block;
+      width: auto;
+      height: 100%;
+    }
+  }
+}
