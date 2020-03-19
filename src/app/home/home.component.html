@@ -5,7 +5,15 @@
     </app-inventory>
   </div>
 
-  <div class="sidebar">
+  <div>
+    <button class="sidebar-toggle btn btn-secondary" (click)="toggleSidebar()" *ngIf="!showSidebar">
+      <img class="sidebar-toggle-image" src="/assets/shopping-cart.png">
+    </button>
+  </div>
+  <div class="sidebar" *ngIf="showSidebar">
+    <button class="close-sidebar btn btn-secondary btn-sm" (click)="toggleSidebar()">
+      >>
+    </button>
     <app-cart>
     </app-cart>
   </div>

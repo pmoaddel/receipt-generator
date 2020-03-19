@@ -6,7 +6,7 @@
       "price": 16.00,
       "isImported": false,
       "types": [ "candy" ],
-      "image": "http://localhost:4200/assets/skittles.jpg"
+      "image": "/assets/skittles.jpg"
     },
     {
       "id": "002",
@@ -14,7 +14,7 @@
       "price": 99.99,
       "isImported": false,
       "types": [ "electronics" ],
-      "image": "http://localhost:4200/assets/walkman-2.jpeg"
+      "image": "/assets/walkman-2.jpeg"
     },
     {
       "id": "003",
@@ -22,7 +22,7 @@
       "price": 0.99,
       "isImported": false,
       "types": [ "popcorn" ],
-      "image": "http://localhost:4200/assets/popcorn-bag.jpeg"
+      "image": "/assets/popcorn-bag.jpeg"
     },
     {
       "id": "004",
@@ -30,7 +30,7 @@
       "price": 11.00,
       "isImported": true,
       "types": [ "coffee" ],
-      "image": "http://localhost:4200/assets/vanilla-coffee.jpeg"
+      "image": "/assets/vanilla-coffee.jpeg"
     },
     {
       "id": "005",
@@ -38,7 +38,7 @@
       "price": 15001.25,
       "isImported": true,
       "types": [ "car" ],
-      "image": "http://localhost:4200/assets/vespa.jpg"
+      "image": "/assets/vespa.jpg"
     },
     {
       "id": "006",
@@ -46,7 +46,7 @@
       "price": 75.99,
       "isImported": true,
       "types": [ "candy" ],
-      "image": "http://localhost:4200/assets/almond-snicker.jpeg"
+      "image": "/assets/almond-snicker.jpeg"
     },
     {
       "id": "007",
@@ -54,7 +54,7 @@
       "price": 55.00,
       "isImported": false,
       "types": [ "electronics" ],
-      "image": "http://localhost:4200/assets/discman.jpeg"
+      "image": "/assets/discman.jpeg"
     },
     {
       "id": "008",
@@ -62,7 +62,7 @@
       "price": 10.00,
       "isImported": true,
       "types": [ "alcohol"],
-      "image": "http://localhost:4200/assets/wine-bottle.jpeg"
+      "image": "/assets/wine-bottle.jpeg"
     },
     {
       "id": "009",
@@ -70,7 +70,7 @@
       "price": 997.99,
       "isImported": false,
       "types": [ "coffee" ],
-      "image": "http://localhost:4200/assets/big-bag-coffee.jpg"
+      "image": "/assets/big-bag-coffee.jpg"
     }
   ],
   "pageSize": 25,

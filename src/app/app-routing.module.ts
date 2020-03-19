@@ -14,7 +14,7 @@ const routes: Routes = [
   	},
     {
       path: 'inventory',
-      component: InventoryComponent
+      component: HomeComponent
     },
     {
       path: 'cart',

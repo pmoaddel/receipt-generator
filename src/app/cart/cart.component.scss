@@ -6,13 +6,20 @@
     height: 250px;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 
     .tile {
-      height: 75%;
+      height: 60%;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
+
+      .cart-image {
+        height: 100px;
+        width: auto;
+      }
     }
 
     .checkout-buttons {

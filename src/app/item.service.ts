@@ -9,7 +9,7 @@ import Item from './item'
   providedIn: 'root'
 })
 export class ItemService {
-  itemUrl: string = 'http://localhost:4200/assets/items.json';
+  itemUrl: string = '/assets/items.json';
   private _items: Item[] = [];
 
   constructor(private http: HttpClient) {
