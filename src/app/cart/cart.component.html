@@ -6,7 +6,7 @@
       <img class="cart-image" src="/assets/shopping-cart.png">
       <span> <strong> Cart </strong> </span>
     </div>
-    <span> Subtotal: {{cartService.subtotal()}}</span>
+    <span> Subtotal: {{cartService.subtotal().toFixed(2)}}</span>
     <div class="checkout-buttons">
       <button type="button" [disabled]="!cartService.items.length" class="btn btn-primary" routerLink="/receipt"> Checkout </button>
     </div>

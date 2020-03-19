@@ -10,4 +10,9 @@ import { CartService } from '../cart.service';
 export class ReceiptComponent {
 
   constructor(private cartService: CartService) { }
+
+
+  print() {
+    window.print();
+  }
 }

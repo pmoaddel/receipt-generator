@@ -1,3 +1,16 @@
 .receipt-background {
   background: lightblue;
+  height: 100%;
+
+  .receipt-buttons {
+    button {
+      margin: 5px 5px 5px 5px
+    }
+  }
+}
+
+@media print {
+  .receipt-buttons {
+    display: none;
+  }
 }

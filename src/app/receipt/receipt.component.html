@@ -1,33 +1,33 @@
 <div class="container receipt-background">
+  <h2> Your Order Summary </h2>
   <div class="row">
-      <div class="col-6">
-        <app-inventory> </app-inventory>
-      </div>
-      <div class="col-6">
-        Your Order Summary
-        <div class="row">
-          <div class="col-3">
-            Name
-          </div>
-          <div class="col-3">
-            Price
-          </div>
-          <div class="col-3">
-            Tax
-          </div>
-        </div>
-        <div class="row" *ngFor="let item of cartService.items">
-          <div class="col-4">
-            {{item.name}}
-          </div>
-          <div class="col-4">
-            {{item.price}}
-          </div>
-          <div class="col-4">
-            {{cartService.getTax(item)}}
-          </div>
-        </div>
-        Tax: {{cartService.totalTax()}}
-        Total: {{cartService.total()}}
-      </div>
+    <div class="col-4">
+      <h3> Name </h3>
+    </div>
+    <div class="col-4">
+      <h3> Price </h3>
+    </div>
+    <div class="col-4">
+      <h3> Tax </h3>
+    </div>
+  </div>
+  <div class="row" *ngFor="let item of cartService.items">
+    <div class="col-4">
+      {{item.name}}
+    </div>
+    <div class="col-4">
+      {{item.price.toFixed(2)}}
+    </div>
+    <div class="col-4">
+      {{cartService.getTax(item).toFixed(2)}}
+    </div>
+  </div>
+  Tax: {{cartService.totalTax().toFixed(2)}}
+  Total: {{cartService.total().toFixed(2)}}
+  <div class="row">
+    <div class="receipt-buttons col-12">
+      <button type="button" routerLink="/cart" class="btn btn-link">Back to Cart</button>
+      <button type="button" (click)="print()" class="btn btn-primary btn-lg">Print</button>
+    </div>
+  </div>
 </div>
