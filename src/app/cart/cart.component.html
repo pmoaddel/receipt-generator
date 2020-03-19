@@ -12,10 +12,10 @@
     </div>
   </div>
   <!-- Items List  -->
-  <div class="items-list">
+  <div class="items-list container">
     <div class="row">
       <div *ngFor="let item of cartService.items" class="col-sm-12" >
-        <app-item-tile [item]="item"> </app-item-tile>
+        <app-item-details-sm [item]="item" [cartIndex]="index"> </app-item-details-sm>
       </div>
     </div>
   </div>

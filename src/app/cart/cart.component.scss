@@ -1,7 +1,6 @@
 .cart {
-  color: white;
-
   .checkout {
+    color: white;
     background: darkblue;
     height: 250px;
     display: flex;
@@ -29,9 +28,9 @@
     }
   }
 
-  .items-list {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-  }
+  // .items-list {
+  //   display: flex;
+  //   justify-content: center;
+  //   flex-direction: row;
+  // }
 }

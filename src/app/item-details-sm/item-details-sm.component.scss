@@ -1,0 +1,20 @@
+.item-details-sm {
+  display: flex;
+  flex-direction: column;
+
+  .img-container {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+
+    .item-image {
+      display: block;
+      width: auto;
+      height: 100%;
+      margin-right: 10px;
+    }
+  }
+
+}
