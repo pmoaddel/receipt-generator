@@ -1,7 +1,7 @@
 <div class="item-details-sm">
   <div class="img-container">
-    <img class="item-image" src={{item.image}}>
-    {{item.price.toFixed(2)}}
+    <img *ngIf="item" class="item-image" src={{item.image}}>
+    {{item.price.toFixed(2)}} ({{count}})
   </div>
   <button class="btn btn-link" (click)="removeFromCart()"> Remove </button>
 </div>

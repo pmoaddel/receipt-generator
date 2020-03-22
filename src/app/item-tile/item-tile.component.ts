@@ -9,7 +9,7 @@ import Item from '../item';
   styleUrls: ['./item-tile.component.scss']
 })
 export class ItemTileComponent implements OnInit {
-  @Input() item: Item;
+  @Input() item: Item = new Item({id: '000', name: 'unknown', price: '0.00'});
 
   constructor(private cartService: CartService) { }
 

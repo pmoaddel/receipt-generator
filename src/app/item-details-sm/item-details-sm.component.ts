@@ -9,12 +9,12 @@ import { CartService } from '../cart.service';
   styleUrls: ['./item-details-sm.component.scss']
 })
 export class ItemDetailsSmComponent {
-  @Input() item: Item;
-  @Input() cartIndex: number;
+  @Input() item: Item = new Item({id: '000', name: 'unknown', price: '0.00'});
+  @Input() count: number;
 
   constructor(private cartService: CartService) { }
 
   removeFromCart() {
-    this.cartService.removeItem(this.cartIndex);
+    this.cartService.removeItem(this.item);
   }
 }

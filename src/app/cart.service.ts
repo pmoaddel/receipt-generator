@@ -4,27 +4,48 @@ import { TaxCalculatorService } from './tax-calculator.service';
 
 import Item from './item';
 
+export interface CartItem {
+  item: Item;
+  count: number;
+}
+
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  items: Item[] = [];
+  items: Map<string, CartItem> = new Map();
 
   constructor(private taxService: TaxCalculatorService) { }
 
 
   addItem(item: Item) {
-    this.items.push(item);
+    let cartItem: CartItem = this.items.get(item.id);
+    if (cartItem) {
+      cartItem.count++;
+      this.items.set(item.id, cartItem);
+    } else {
+      this.items.set(item.id, {item, count: 1});
+    }
   }
 
-  removeItem(index: number) {
-    this.items.splice(index, 1);
+  removeItem(item: Item) {
+    const itemID = item.id;
+    let cartItem: CartItem = this.items.get(itemID);
+    if (!cartItem) {
+      throw Error('Cannot remove item. Item does not exist');
+    }
+    if (cartItem.count === 1) {
+      this.items.delete(itemID);
+      return;
+    }
+    cartItem.count--;
+    this.items.set(itemID, cartItem);
   }
 
   subtotal(): Decimal {
     let subtotal: Decimal = new Decimal(0);
-    this.items.forEach((item) => {
-      subtotal = subtotal.plus(item.price);
+    this.items.forEach((cartItem: CartItem, itemID: string) => {
+      subtotal = subtotal.plus(cartItem.item.price.times(cartItem.count));
     });
     return subtotal;
   }
@@ -44,16 +65,16 @@ export class CartService {
 
   totalTax(): Decimal {
     let tax: Decimal = new Decimal(0);
-    this.items.forEach((item) => {
-      tax = tax.plus(this.getTax(item));
+    this.items.forEach((cartItem: CartItem, itemID: string) => {
+      tax = tax.plus(this.getTax(cartItem.item).times(cartItem.count));
     });
     return tax;
   }
 
   total(): Decimal {
     let total: Decimal = new Decimal(0);
-    this.items.forEach((item) => {
-      total = total.plus(item.price);
+    this.items.forEach((cartItem: CartItem, itemID: string) => {
+      total = total.plus(cartItem.item.price.times(cartItem.count));
     });
     const tax = this.totalTax();
     return total.plus(tax);

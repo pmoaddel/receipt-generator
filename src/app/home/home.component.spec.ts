@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { HttpClientModule, HttpClient } from  '@angular/common/http';
 import { HomeComponent } from './home.component';
+import { InventoryComponent } from '../inventory/inventory.component';
+import { CartComponent } from '../cart/cart.component';
+import { ItemTileComponent } from '../item-tile/item-tile.component';
+import { ItemDetailsSmComponent } from '../item-details-sm/item-details-sm.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +12,16 @@ describe('HomeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        HomeComponent ,
+        InventoryComponent,
+        CartComponent,
+        ItemTileComponent,
+        ItemDetailsSmComponent
+      ]
     })
     .compileComponents();
   }));

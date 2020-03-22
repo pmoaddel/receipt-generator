@@ -35,13 +35,4 @@ export class ItemService {
         return items.slice();
       }));
   }
-
-  // findRecord(id: string): Observable<Rumor> {
-  //   let rumors$ : Observable<Rumor[]> = this.rumors.length ? of(this.rumors) : this.load();
-  //   return rumors$.pipe(
-  //     map((rumors) => {
-  //       return this.rumors.find((rumor) => { return rumor.id === id; });
-  //     })
-  //   );
-  // }
 }

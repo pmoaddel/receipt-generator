@@ -11,6 +11,7 @@ export default class Item {
   image: string;
 
   constructor(itemJson: any) {
+    this.id = itemJson.id;
     this.name = itemJson.name;
     this.price = new Decimal(itemJson.price);
     this.isImported = itemJson.isImported;

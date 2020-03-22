@@ -12,7 +12,7 @@ export class HomeComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
-    this.showSidebar = !!this.cartService.items.length
+    this.showSidebar = !!this.cartService.items.size;
   }
 
   toggleSidebar() {

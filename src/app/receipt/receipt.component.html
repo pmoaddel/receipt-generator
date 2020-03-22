@@ -1,25 +1,31 @@
 <div class="container receipt-background">
   <h2> Your Order Summary </h2>
   <div class="row">
-    <div class="col-4">
+    <div class="col-3">
       <h3> Name </h3>
     </div>
-    <div class="col-4">
+    <div class="col-3">
       <h3> Price </h3>
     </div>
-    <div class="col-4">
+    <div class="col-3">
       <h3> Tax </h3>
     </div>
+    <div class="col-3">
+      <h3> Quantity </h3>
+    </div>
   </div>
-  <div class="row" *ngFor="let item of cartService.items">
-    <div class="col-4">
-      {{item.name}}
+  <div class="row" *ngFor="let cartKeyValue of cartService.items | keyvalue">
+    <div class="col-3">
+      {{cartKeyValue.value.item.name}}
     </div>
-    <div class="col-4">
-      {{item.price.toFixed(2)}}
+    <div class="col-3">
+      {{cartKeyValue.value.item.price.toFixed(2)}}
     </div>
-    <div class="col-4">
-      {{cartService.getTax(item).toFixed(2)}}
+    <div class="col-3">
+      {{cartService.getTax(cartKeyValue.value.item).toFixed(2)}}
+    </div>
+    <div class="col-3">
+      {{cartKeyValue.value.count}}
     </div>
   </div>
   Tax: {{cartService.totalTax().toFixed(2)}}
