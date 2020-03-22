@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ItemService } from '../item.service';
 
@@ -11,6 +11,7 @@ import Item from '../item';
 })
 export class InventoryComponent implements OnInit {
   items: Item[] = [];
+  @Output() public itemAddedToCart = new EventEmitter<Item>();
 
   constructor(private itemService: ItemService) {
   }
@@ -21,4 +22,7 @@ export class InventoryComponent implements OnInit {
     });
   }
 
+  addToCart(item: Item) {
+    this.itemAddedToCart.emit(item);
+  }
 }

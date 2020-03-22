@@ -1,17 +1,17 @@
 <div id="home">
   <div class="content">
-    <app-inventory>
+    <app-inventory (itemAddedToCart)="openSidebar([$event])">
 
-    </app-inventory>
+    </app-inventory >
   </div>
 
   <div>
-    <button class="sidebar-toggle btn btn-secondary" (click)="toggleSidebar()" *ngIf="!showSidebar">
+    <button class="sidebar-toggle btn btn-secondary" (click)="openSidebar()" *ngIf="!showSidebar">
       <img class="sidebar-toggle-image" src="/assets/shopping-cart.png">
     </button>
   </div>
   <div class="sidebar border border-secondary" *ngIf="showSidebar">
-    <button class="close-sidebar btn btn-secondary btn-sm" (click)="toggleSidebar()">
+    <button class="close-sidebar btn btn-secondary btn-sm" (click)="closeSidebar()">
       >>
     </button>
     <app-cart>

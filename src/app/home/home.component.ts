@@ -15,8 +15,11 @@ export class HomeComponent implements OnInit {
     this.showSidebar = !!this.cartService.items.size;
   }
 
-  toggleSidebar() {
-    console.log('toggle sidebar');
-    this.showSidebar = !this.showSidebar;
+  openSidebar() {
+    this.showSidebar = true;
+  }
+
+  closeSidebar() {
+    this.showSidebar = false;
   }
 }

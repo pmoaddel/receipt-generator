@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
 import { CartService } from '../cart.service';
 
 import Item from '../item';
@@ -9,6 +9,8 @@ import Item from '../item';
   styleUrls: ['./item-tile.component.scss']
 })
 export class ItemTileComponent implements OnInit {
+  @Output() public itemAddedToCart = new EventEmitter<Item>();
+
   @Input() item: Item = new Item({id: '000', name: 'unknown', price: '0.00'});
 
   constructor(private cartService: CartService) { }
@@ -18,6 +20,7 @@ export class ItemTileComponent implements OnInit {
 
   addToCart() {
     this.cartService.addItem(this.item);
+    this.itemAddedToCart.emit(this.item);
   }
 
 }
