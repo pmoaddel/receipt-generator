@@ -15,7 +15,7 @@ export default class Item {
     this.name = itemJson.name;
     this.price = new Decimal(itemJson.price);
     this.isImported = itemJson.isImported;
-    this.types = itemJson.types;
+    this.types = itemJson.types || [];
     this.image = itemJson.image;
 	}
 
