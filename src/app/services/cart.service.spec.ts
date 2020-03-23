@@ -2,9 +2,9 @@ import { Decimal } from 'decimal.js';
 import { TestBed } from '@angular/core/testing';
 
 import { CartService } from './cart.service';
-import { TaxCalculatorService } from './tax-calculator.service';
-import { CartItem } from './cart.reducer';
-import Item from './item';
+import { TaxCalculatorService } from '../services/tax-calculator.service';
+import { CartItem } from '../cart.reducer';
+import Item from '../item';
 
 const TEST_ITEM_ONE: Item = new Item({id: '111', price: '99.99'});
 const TEST_ITEM_TWO: Item = new Item({id: '222', price: '99.99', types: ['candy']});

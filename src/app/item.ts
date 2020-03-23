@@ -1,5 +1,4 @@
 import { Decimal } from 'decimal.js';
-import { TaxCalculatorService } from './tax-calculator.service';
 
 export default class Item {
 

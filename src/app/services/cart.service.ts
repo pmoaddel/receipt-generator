@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Decimal } from 'decimal.js';
-import { TaxCalculatorService } from './tax-calculator.service';
 
-import Item from './item';
-
-import { CartItem } from './cart.reducer';
+import { TaxCalculatorService } from '../services/tax-calculator.service';
+import Item from '../item';
+import { CartItem } from '../cart.reducer';
 
 @Injectable({
   providedIn: 'root'

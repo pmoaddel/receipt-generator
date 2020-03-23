@@ -4,7 +4,7 @@ import { tap } from 'rxjs/operators';
 import { Store, select } from '@ngrx/store';
 import { Decimal } from 'decimal.js';
 
-import { CartService } from '../cart.service';
+import { CartService } from '../services/cart.service';
 
 import Item from '../item';
 
