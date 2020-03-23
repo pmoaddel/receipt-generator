@@ -14,7 +14,7 @@
       <h3> Quantity </h3>
     </div>
   </div>
-  <div class="row" *ngFor="let cartKeyValue of cartService.items | keyvalue">
+  <div class="row" *ngFor="let cartKeyValue of cartItems$ | async | keyvalue">
     <div class="col-3">
       {{cartKeyValue.value.item.name}}
     </div>
@@ -28,8 +28,8 @@
       {{cartKeyValue.value.count}}
     </div>
   </div>
-  Tax: {{cartService.totalTax().toFixed(2)}}
-  Total: {{cartService.total().toFixed(2)}}
+  Tax: {{totalTax.toFixed(2)}}
+  Total: {{total.toFixed(2)}}
   <div class="row">
     <div class="receipt-buttons col-12">
       <button type="button" routerLink="/cart" class="btn btn-link">Back to Cart</button>

@@ -15,7 +15,6 @@ import Item from '../item';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
-  // items: Item[] = [];
   items$: Observable<Item[]>;
   @Output() public itemAddedToCart = new EventEmitter<Item>();
 

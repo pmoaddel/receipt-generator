@@ -14,6 +14,7 @@ import { ItemDetailsSmComponent } from './item-details-sm/item-details-sm.compon
 
 import { StoreModule } from '@ngrx/store';
 import { itemReducer } from './item.reducer';
+import { cartReducer } from './cart.reducer';
 import { EffectsModule } from '@ngrx/effects';
 import { ItemEffects } from './item.effects';
 
@@ -33,7 +34,7 @@ import { ItemEffects } from './item.effects';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ item: itemReducer }),
+    StoreModule.forRoot({ item: itemReducer, cart: cartReducer }),
     EffectsModule.forRoot([ItemEffects])
   ],
   providers: [],
