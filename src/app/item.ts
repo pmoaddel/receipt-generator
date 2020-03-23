@@ -29,12 +29,4 @@ export default class Item {
       return TAX_FREE_TYPES[type];
     });
   }
-
-  // getTaxes(): Decimal {
-  //     return TaxCalculatorService.calculateSalesTax(this.price);
-  // }
-  //
-  // getPriceWithTax(): Decimal {
-  //     return new Decimal(12);
-  // }
 }
