@@ -1,35 +1,31 @@
 <div class="container receipt-background">
   <h2> Your Order Summary </h2>
   <div class="row">
-    <div class="col-3">
+    <div class="col-4">
       <h3> Name </h3>
     </div>
-    <div class="col-3">
+    <div class="col-4">
       <h3> Price </h3>
     </div>
-    <div class="col-3">
-      <h3> Tax </h3>
-    </div>
-    <div class="col-3">
+    <div class="col-4">
       <h3> Quantity </h3>
     </div>
   </div>
   <div class="row" *ngFor="let cartKeyValue of cartItems$ | async | keyvalue">
-    <div class="col-3">
+    <div class="col-4">
       {{cartKeyValue.value.item.name}}
     </div>
-    <div class="col-3">
-      {{cartKeyValue.value.item.price.toFixed(2)}}
+    <div class="col-4">
+      {{
+        cartKeyValue.value.item.price.plus(cartService.getTax(cartKeyValue.value.item)).toFixed(2)
+      }}
     </div>
-    <div class="col-3">
-      {{cartService.getTax(cartKeyValue.value.item).toFixed(2)}}
-    </div>
-    <div class="col-3">
+    <div class="col-4">
       {{cartKeyValue.value.count}}
     </div>
   </div>
-  Tax: {{totalTax.toFixed(2)}}
-  Total: {{total.toFixed(2)}}
+  <strong> Tax: </strong> {{totalTax.toFixed(2)}}
+  <strong> Total: </strong> {{total.toFixed(2)}}
   <div class="row">
     <div class="receipt-buttons col-12">
       <button type="button" routerLink="/cart" class="btn btn-link">Back to Cart</button>
