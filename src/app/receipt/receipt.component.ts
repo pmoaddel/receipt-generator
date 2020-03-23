@@ -5,7 +5,7 @@ import { Store, select } from '@ngrx/store';
 import { Decimal } from 'decimal.js';
 
 import { CartService } from '../services/cart.service';
-import { CartItem } from '../cart.reducer';
+import { CartItem } from '../store/cart/cart.reducer';
 
 @Component({
   selector: 'app-receipt',

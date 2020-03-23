@@ -13,10 +13,10 @@ import { ReceiptComponent } from './receipt/receipt.component';
 import { ItemDetailsSmComponent } from './item-details-sm/item-details-sm.component';
 
 import { StoreModule } from '@ngrx/store';
-import { itemReducer } from './item.reducer';
-import { cartReducer } from './cart.reducer';
+import { itemReducer } from './store/item/item.reducer';
+import { cartReducer } from './store/cart/cart.reducer';
 import { EffectsModule } from '@ngrx/effects';
-import { ItemEffects } from './item.effects';
+import { ItemEffects } from './store/item/item.effects';
 
 
 @NgModule({

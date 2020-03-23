@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
 import { addItem, removeItem } from './cart.actions';
 
-import Item from './item';
+import Item from '../../item';
 
 export interface CartItem {
   item: Item;

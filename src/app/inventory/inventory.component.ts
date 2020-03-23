@@ -4,7 +4,7 @@ import { Store, select } from '@ngrx/store';
 
 import { ItemService } from '../services/item.service';
 
-import { getAll } from '../item.actions';
+import { getAll } from '../store/item/item.actions';
 
 
 import Item from '../item';

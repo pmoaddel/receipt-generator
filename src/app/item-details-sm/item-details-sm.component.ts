@@ -1,6 +1,6 @@
 import { Input, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { removeItem } from '../cart.actions';
+import { removeItem } from '../store/cart/cart.actions';
 
 import Item from '../item';
 

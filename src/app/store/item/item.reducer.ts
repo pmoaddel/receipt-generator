@@ -1,7 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
-import { getAll, loaded } from './item.actions';
 
-import Item from './item';
+import { getAll, loaded } from './item.actions';
+import Item from '../../item';
 
 export const initialState: Item[] = [];
 

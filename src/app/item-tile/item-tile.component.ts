@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { addItem } from '../cart.actions';
+import { addItem } from '../store/cart/cart.actions';
 
 import Item from '../item';
 

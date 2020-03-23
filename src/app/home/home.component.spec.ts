@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientModule, HttpClient } from  '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from '../cart.reducer';
+import { cartReducer } from '../store/cart/cart.reducer';
 import { HomeComponent } from './home.component';
 import { InventoryComponent } from '../inventory/inventory.component';
 import { CartComponent } from '../cart/cart.component';

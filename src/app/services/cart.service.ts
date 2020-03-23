@@ -3,7 +3,7 @@ import { Decimal } from 'decimal.js';
 
 import { TaxCalculatorService } from '../services/tax-calculator.service';
 import Item from '../item';
-import { CartItem } from '../cart.reducer';
+import { CartItem } from '../store/cart/cart.reducer';
 
 @Injectable({
   providedIn: 'root'

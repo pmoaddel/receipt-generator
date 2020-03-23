@@ -8,7 +8,7 @@ import { CartService } from '../services/cart.service';
 
 import Item from '../item';
 
-import { CartItem } from '../cart.reducer';
+import { CartItem } from '../store/cart/cart.reducer';
 
 @Component({
   selector: 'app-cart',

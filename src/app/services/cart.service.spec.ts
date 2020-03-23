@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { CartService } from './cart.service';
 import { TaxCalculatorService } from '../services/tax-calculator.service';
-import { CartItem } from '../cart.reducer';
+import { CartItem } from '../store/cart/cart.reducer';
 import Item from '../item';
 
 const TEST_ITEM_ONE: Item = new Item({id: '111', price: '99.99'});
