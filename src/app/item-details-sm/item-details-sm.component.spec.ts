@@ -1,4 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { cartReducer } from '../cart.reducer';
 
 import { ItemDetailsSmComponent } from './item-details-sm.component';
 
@@ -19,7 +21,10 @@ describe('ItemDetailsSmComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ItemDetailsSmComponent ]
+      declarations: [ ItemDetailsSmComponent ],
+      imports: [
+        StoreModule.forRoot({ cart: cartReducer })
+      ]
     })
     .compileComponents();
   }));
