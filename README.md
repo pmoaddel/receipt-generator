@@ -1,6 +1,6 @@
 # ReceiptGenerator
 
-This application allow a user to print a receipt calculated from a basket of goods using a simple point and click interface.
+This application allows a user to print a receipt calculated from a basket of goods using a simple point and click interface.
 
 Tax is calculated by the following:
 
