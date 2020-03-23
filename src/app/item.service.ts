@@ -28,7 +28,7 @@ export class ItemService {
     );
   }
 
-  findAll(): Observable<Item[]> {
+  getAll(): Observable<Item[]> {
     const items$ : Observable<Item[]> = this._items.length ? of(this._items) : this.load();
     return items$.pipe(
       map((items) => {
