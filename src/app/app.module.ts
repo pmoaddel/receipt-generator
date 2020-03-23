@@ -3,14 +3,14 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
-import { CartComponent } from './cart/cart.component';
-import { HomeComponent } from './home/home.component';
-import { InventoryComponent } from './inventory/inventory.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { ItemTileComponent } from './item-tile/item-tile.component';
-import { ReceiptComponent } from './receipt/receipt.component';
-import { ItemDetailsSmComponent } from './item-details-sm/item-details-sm.component';
+import { AppComponent } from './components/app.component';
+import { CartComponent } from './components/cart/cart.component';
+import { HomeComponent } from './components/home/home.component';
+import { InventoryComponent } from './components/inventory/inventory.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { ItemTileComponent } from './components/item-tile/item-tile.component';
+import { ReceiptComponent } from './components/receipt/receipt.component';
+import { ItemDetailsSmComponent } from './components/item-details-sm/item-details-sm.component';
 
 import { StoreModule } from '@ngrx/store';
 import { itemReducer } from './store/item/item.reducer';

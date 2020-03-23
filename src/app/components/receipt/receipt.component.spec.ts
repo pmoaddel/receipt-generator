@@ -1,29 +1,25 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from '../store/cart/cart.reducer';
 
-import { CartComponent } from './cart.component';
-import { ItemDetailsSmComponent } from '../item-details-sm/item-details-sm.component';
+import { cartReducer } from '../../store/cart/cart.reducer';
+import { ReceiptComponent } from './receipt.component';
 
-describe('CartComponent', () => {
-  let component: CartComponent;
-  let fixture: ComponentFixture<CartComponent>;
+describe('ReceiptComponent', () => {
+  let component: ReceiptComponent;
+  let fixture: ComponentFixture<ReceiptComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      declarations: [ ReceiptComponent ],
       imports: [
         StoreModule.forRoot({ cart: cartReducer })
-      ],
-      declarations: [
-        CartComponent,
-        ItemDetailsSmComponent
       ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CartComponent);
+    fixture = TestBed.createComponent(ReceiptComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

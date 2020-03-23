@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 
-import { itemReducer } from '../store/item/item.reducer';
+import { itemReducer } from '../../store/item/item.reducer';
 import { InventoryComponent } from './inventory.component';
 import { ItemTileComponent } from '../item-tile/item-tile.component';
 

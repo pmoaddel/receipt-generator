@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from '../store/cart/cart.reducer';
 
+import { cartReducer } from '../../store/cart/cart.reducer';
 import { ItemTileComponent } from './item-tile.component';
 
 describe('ItemTileComponent', () => {

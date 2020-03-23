@@ -1,8 +1,8 @@
 import { Input, Component } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { removeItem } from '../store/cart/cart.actions';
 
-import Item from '../item';
+import { removeItem } from '../../store/cart/cart.actions';
+import Item from '../../item';
 
 @Component({
   selector: 'app-item-details-sm',

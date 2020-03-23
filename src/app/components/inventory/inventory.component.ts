@@ -2,12 +2,9 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
-import { ItemService } from '../services/item.service';
-
-import { getAll } from '../store/item/item.actions';
-
-
-import Item from '../item';
+import { ItemService } from '../../services/item.service';
+import { getAll } from '../../store/item/item.actions';
+import Item from '../../item';
 
 @Component({
   selector: 'app-inventory',

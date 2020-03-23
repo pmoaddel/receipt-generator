@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { StoreModule } from '@ngrx/store';
-import { cartReducer } from '../store/cart/cart.reducer';
 
+import { cartReducer } from '../../store/cart/cart.reducer';
 import { ItemDetailsSmComponent } from './item-details-sm.component';
-
-import Item from '../item';
+import Item from '../../item';
 
 const testItem: Item = new Item({
   "id": "001",
