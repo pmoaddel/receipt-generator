@@ -1,7 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { StoreModule } from '@ngrx/store';
+import { itemReducer } from '../item.reducer';
 
 import { InventoryComponent } from './inventory.component';
-
 import { ItemTileComponent } from '../item-tile/item-tile.component';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +14,8 @@ describe('InventoryComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        HttpClientModule
+        HttpClientModule,
+        StoreModule.forRoot({ item: itemReducer })
       ],
       declarations: [
         InventoryComponent,

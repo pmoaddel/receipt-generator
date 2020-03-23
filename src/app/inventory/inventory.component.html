@@ -1,6 +1,6 @@
 <div class="inventory container">
   <div class="row row-cols-1 row-cols-md-3">
-    <div *ngFor="let item of items">
+    <div *ngFor="let item of items$ | async">
       <app-item-tile class="col mb-4" [item]="item" (itemAddedToCart)="addToCart($event)"> </app-item-tile>
     </div>
   </div>

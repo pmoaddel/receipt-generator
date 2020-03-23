@@ -1,18 +1,25 @@
-import { Component, OnInit } from '@angular/core';
-import { CartService } from '../cart.service';
+import { Component } from '@angular/core';
+import { Store, select } from '@ngrx/store';
+import { first } from 'rxjs/operators';
+
+
+import { CartItem } from '../cart.reducer';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   showSidebar: boolean;
 
-  constructor(private cartService: CartService) { }
-
-  ngOnInit() {
-    this.showSidebar = !!this.cartService.items.size;
+  constructor(private store: Store<{ cart: Map<string, CartItem>}>) {
+      store.pipe(
+          select('cart'),
+          first()
+      ).subscribe((cart: Map<string, CartItem>) => {
+          this.showSidebar = !!cart.size;
+      });
   }
 
   openSidebar() {

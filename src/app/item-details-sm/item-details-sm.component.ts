@@ -1,7 +1,8 @@
 import { Input, Component } from '@angular/core';
-import Item from '../item';
+import { Store } from '@ngrx/store';
+import { removeItem } from '../cart.actions';
 
-import { CartService } from '../cart.service';
+import Item from '../item';
 
 @Component({
   selector: 'app-item-details-sm',
@@ -12,9 +13,9 @@ export class ItemDetailsSmComponent {
   @Input() item: Item = new Item({id: '000', name: 'unknown', price: '0.00'});
   @Input() count: number;
 
-  constructor(private cartService: CartService) { }
+  constructor(private store: Store<{ cart }>) { }
 
   removeFromCart() {
-    this.cartService.removeItem(this.item);
+    this.store.dispatch(removeItem({ item: this.item}));
   }
 }

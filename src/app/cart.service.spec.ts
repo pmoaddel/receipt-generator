@@ -1,8 +1,9 @@
 import { Decimal } from 'decimal.js';
 import { TestBed } from '@angular/core/testing';
 
-import { CartService, CartItem } from './cart.service';
+import { CartService } from './cart.service';
 import { TaxCalculatorService } from './tax-calculator.service';
+import { CartItem } from './cart.reducer';
 import Item from './item';
 
 const TEST_ITEM_ONE: Item = new Item({id: '111', price: '99.99'});
@@ -19,63 +20,20 @@ describe('CartService', () => {
     expect(service).toBeTruthy();
   });
 
-  //add items
-  it('add items and increases count', () => {
-    const service: CartService = TestBed.get(CartService);
-    service.addItem(TEST_ITEM_ONE);
-    let cartItem: CartItem = service.items.get(TEST_ITEM_ONE.id);
-    expect(cartItem.item.id).toBe(TEST_ITEM_ONE.id);
-    expect(cartItem.count).toBe(1);
-    service.addItem(TEST_ITEM_ONE);
-    cartItem = service.items.get(TEST_ITEM_ONE.id);
-    expect(cartItem.count).toBe(2);
-    service.addItem(TEST_ITEM_TWO);
-    cartItem = service.items.get(TEST_ITEM_ONE.id);
-    let cartItem2: CartItem = service.items.get(TEST_ITEM_TWO.id);
-    expect(cartItem.count).toBe(2);
-    expect(cartItem2.count).toBe(1);
-  });
-
-  // remove items
-  it('removes items and decreases count', () => {
-    const service: CartService = TestBed.get(CartService);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_TWO);
-    service.addItem(TEST_ITEM_TWO);
-    service.removeItem(TEST_ITEM_ONE);
-    service.removeItem(TEST_ITEM_ONE)
-    service.removeItem(TEST_ITEM_TWO);
-    service.removeItem(TEST_ITEM_TWO);
-    let cartItem: CartItem = service.items.get(TEST_ITEM_ONE.id);
-    let cartItem2: CartItem = service.items.get(TEST_ITEM_TWO.id);
-    expect(cartItem.count).toBe(1);
-    expect(cartItem2).toBeFalsy();
-  });
-
   // subtotal
   it('calculates subtotal', () => {
     const service: CartService = TestBed.get(CartService);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_TWO);
-    service.addItem(TEST_ITEM_TWO);
-    service.removeItem(TEST_ITEM_ONE)
-    service.removeItem(TEST_ITEM_TWO);
+    let cart: Map<string, CartItem> = new Map();
+    cart.set(TEST_ITEM_ONE.id, { item: TEST_ITEM_ONE, count: 2});
+    cart.set(TEST_ITEM_TWO.id, { item: TEST_ITEM_TWO, count: 1});
     const expectedSubtotal: Decimal = TEST_ITEM_ONE.price.times(2).plus(TEST_ITEM_TWO.price);
-    expect(service.subtotal().toString()).toBe(expectedSubtotal.toString());
+    expect(service.subtotal(cart).toString()).toBe(expectedSubtotal.toString());
   });
 
   // get tax for item
   it('calculates the tax for an item in the cart', () => {
     const service: CartService = TestBed.get(CartService);
     const taxService: TaxCalculatorService = TestBed.get(TaxCalculatorService);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_TWO);
-    service.addItem(TEST_ITEM_THREE);
-    service.addItem(TEST_ITEM_FOUR);
     // no sales tax, no import tax
     let expectedTax = new Decimal(0);
     expect(expectedTax.toString()).toBe(service.getTax(TEST_ITEM_TWO).toString());
@@ -94,27 +52,22 @@ describe('CartService', () => {
   // total tax
   it('calculates the total tax for all items in the cart', () => {
     const service: CartService = TestBed.get(CartService);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_TWO);
-    service.addItem(TEST_ITEM_THREE);
-    service.removeItem(TEST_ITEM_THREE);
+    let cart: Map<string, CartItem> = new Map();
+    cart.set(TEST_ITEM_ONE.id, { item: TEST_ITEM_ONE, count: 2});
+    cart.set(TEST_ITEM_TWO.id, { item: TEST_ITEM_TWO, count: 1});
     let expectedTax: Decimal = service.getTax(TEST_ITEM_ONE).times(2).plus(service.getTax(TEST_ITEM_TWO));
-    expect(expectedTax.toString()).toBe(service.totalTax().toString());
+    expect(expectedTax.toString()).toBe(service.totalTax(cart).toString());
   });
 
   // total
   it('calculates the total cost for all items in the cart', () => {
     const service: CartService = TestBed.get(CartService);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_ONE);
-    service.addItem(TEST_ITEM_TWO);
-    service.addItem(TEST_ITEM_TWO);
-    service.addItem(TEST_ITEM_THREE);
-    service.removeItem(TEST_ITEM_THREE);
+    let cart: Map<string, CartItem> = new Map();
+    cart.set(TEST_ITEM_ONE.id, { item: TEST_ITEM_ONE, count: 3});
+    cart.set(TEST_ITEM_TWO.id, { item: TEST_ITEM_TWO, count: 2});
+    cart.set(TEST_ITEM_THREE.id, { item: TEST_ITEM_THREE, count: 1});
     // no sales tax, no import tax
-    let expectedTotal: Decimal = service.subtotal().plus(service.totalTax());
-    expect(expectedTotal.toString()).toBe(service.total().toString());
+    let expectedTotal: Decimal = service.subtotal(cart).plus(service.totalTax(cart));
+    expect(expectedTotal.toString()).toBe(service.total(cart).toString());
   });
 });

@@ -12,6 +12,13 @@ import { ItemTileComponent } from './item-tile/item-tile.component';
 import { ReceiptComponent } from './receipt/receipt.component';
 import { ItemDetailsSmComponent } from './item-details-sm/item-details-sm.component';
 
+import { StoreModule } from '@ngrx/store';
+import { itemReducer } from './item.reducer';
+import { cartReducer } from './cart.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { ItemEffects } from './item.effects';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +33,9 @@ import { ItemDetailsSmComponent } from './item-details-sm/item-details-sm.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({ item: itemReducer, cart: cartReducer }),
+    EffectsModule.forRoot([ItemEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

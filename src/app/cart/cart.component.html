@@ -6,15 +6,15 @@
       <img class="cart-image" src="/assets/shopping-cart.png">
       <span> <strong> Cart </strong> </span>
     </div>
-    <span> Subtotal: {{cartService.subtotal().toFixed(2)}}</span>
+    <span> Subtotal: {{subtotal.toFixed(2)}}</span>
     <div class="checkout-buttons">
-      <button type="button" [disabled]="!cartService.items.size" class="btn btn-primary" routerLink="/receipt"> Checkout </button>
+      <button type="button" [disabled]="checkoutDisabled" class="btn btn-primary" routerLink="/receipt"> Checkout </button>
     </div>
   </div>
   <!-- Items List  -->
   <div class="items-list container">
     <div class="row">
-      <div *ngFor="let cartKeyValue of cartService.items | keyvalue" class="col-sm-12" >
+      <div *ngFor="let cartKeyValue of cartItems$ | async | keyvalue" class="col-sm-12" >
         <app-item-details-sm [item]="cartKeyValue.value.item" [count]="cartKeyValue.value.count"> </app-item-details-sm>
       </div>
     </div>
